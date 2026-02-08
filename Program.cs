@@ -62,8 +62,13 @@ class Program
 
                     break;
                 case 2 :
-                    
+                  Console.WriteLine("Current progress" +stepsDone+ "steps completed.");
+                  break;
+                case 3 :
+                    keepRunning = false;
+                    break;
             }
         } while (keepRunning);
+        Console.WriteLine("Program finished.");
     }
 }
