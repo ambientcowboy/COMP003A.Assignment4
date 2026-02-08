@@ -10,7 +10,7 @@ class Program
         int safetyStopsAtStep = 5;
         int nextStep = 1;
         int stepsDone = 0;
-        bool safetyStop = false;
+        bool safetyStopped = false;
         bool keepRunning = true;
         do
         {
@@ -29,6 +29,40 @@ class Program
                         Console.WriteLine("Safety limit reached. Routine stopped.");
                         break;
                     }
+
+                    if (nextStep == safetyStopsAtStep)
+                    {
+                        safetyStopped = true;
+                        Console.WriteLine("Safety limit reached. Routine stopped.");
+                        break;
+                    }
+
+                    if (nextStep > maxSteps)
+                    {
+                        Console.WriteLine("Max steps reached. Routine stopped.");
+                        break;
+                    }
+
+                    if (nextStep == restrictedStep)
+                    {
+                        Console.WriteLine("Step" + nextStep + "is restricted. Routine step skipped.");
+                        nextStep++;
+                        stepsDone++;
+                        break;
+                    }
+
+                    Console.WriteLine("Routine step" + nextStep + "completed.");
+                    nextStep++;
+                    stepsDone++;
+
+                    if (nextStep > maxSteps)
+                    {
+                        Console.WriteLine("Max steps reached. Routine stopped.");
+                    }
+
+                    break;
+                case 2 :
+                    
             }
         } while (keepRunning);
     }
