@@ -45,13 +45,13 @@ class Program
 
                     if (nextStep == restrictedStep)
                     {
-                        Console.WriteLine("Step" + nextStep + "is restricted. Routine step skipped.");
+                        Console.WriteLine("Step " + nextStep + " is restricted. Routine step skipped.");
                         nextStep++;
                         stepsDone++;
                         break;
                     }
 
-                    Console.WriteLine("Routine step" + nextStep + "completed.");
+                    Console.WriteLine("Routine step " + nextStep + " completed.");
                     nextStep++;
                     stepsDone++;
 
@@ -62,7 +62,7 @@ class Program
 
                     break;
                 case 2 :
-                  Console.WriteLine("Current progress" +stepsDone+ "steps completed.");
+                  Console.WriteLine("Current progress: " + stepsDone + " steps completed.");
                   break;
                 case 3 :
                     keepRunning = false;
