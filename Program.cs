@@ -4,14 +4,29 @@ class Program
 {
     static void Main(string[] args)
     {
-        //This 
+        /*
+        * Defining integer variables to compare and count whole numbers
+        in this case , the program needs whole numbers to count routine steps
+        as an actual number and as they are repeated. 
+        
+        For this program step 3 is considered restricted and is skipped, 
+        this is to demonstrate a rule-based exception when programming loops,
+        preventing the loop body from skipping user iterations
+            */
         int maxSteps = 6;
-        int restrictedStep = 3;
+        int restrictedStep = 3; 
         int safetyStopsAtStep = 5;
         int nextStep = 1;
         int stepsDone = 0;
+        /*
+         * Bools are used to control program in response to repeated user inputs
+         */
         bool safetyStopped = false;
         bool keepRunning = true;
+        /*
+         * do-while is used to create loop for user to continue repeating inputs
+         * while remaining within the loop.
+         */
         do
         {
             Console.WriteLine();
@@ -24,6 +39,10 @@ class Program
             switch (choice)
             {
                 case 1:
+                    /*
+                     *if statments are used here to esnure program follows rule order (safety, max, and restricted)
+                    before program continues, this enables the user to check routine steps at will.
+                    */
                     if (safetyStopped)
                     {
                         Console.WriteLine("Safety limit reached. Routine stopped.");
